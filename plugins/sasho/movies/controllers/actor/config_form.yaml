@@ -1,0 +1,10 @@
+name: Actor
+form: $/sasho/movies/models/actor/fields.yaml
+modelClass: Sasho\Movies\Models\Actor
+defaultRedirect: sasho/movies/actor
+create:
+    redirect: 'sasho/movies/actor/update/:id'
+    redirectClose: sasho/movies/actor
+update:
+    redirect: sasho/movies/actor
+    redirectClose: sasho/movies/actor

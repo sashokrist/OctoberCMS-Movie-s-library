@@ -1,0 +1,23 @@
+<form method="POST" action="{{ url('add-actors') }}" accept-charset="UTF8" enctype="multipart/form-data" class="contact-form">
+
+    <input type="hidden" name="_handler" value="onSave" class="contact-form">
+    {{ form_token() }}
+    {{ form_sessionKey() }}
+    <div class="form-group">
+    <label>Actor name</label>
+    <input type="text" name="name" class="contact-form">
+    </div>
+    <div class="form-group">
+    <label>Actor last name</label>
+    <input type="text" name="lastname" class="contact-form">
+    </div>
+    <div class="form-group">
+    <label>Actor image</label>
+    <input type="file" name="actorimage">
+    </div>
+    <button type="submit" class="contact-form btn btn-primary">Save actor</button>
+
+    {% flash success %}
+        <p>{{ message }}</p>
+    {% endflash %}
+</form>

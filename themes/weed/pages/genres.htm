@@ -1,0 +1,26 @@
+title = "Genres"
+url = "/movies/movie/genres/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Sasho\Movies\Models\Genre"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "genre_title"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <h2> {{ attribute(record, displayColumn) }}</h2>
+
+    {% for movie in record.movies %}
+        {#<a href="{{ 'genres'|page({ slug: genre.genre_title  }) }}"> {{ genre.genre_title }}<br></a>#}
+            {{ movie.name }}<br>
+    {% endfor %}
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

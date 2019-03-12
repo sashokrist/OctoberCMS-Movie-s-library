@@ -1,0 +1,56 @@
+fields:
+    name:
+        label: Title
+        span: full
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: richeditor
+    year:
+        label: Year
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    poster:
+        label: Poster
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload
+    gallery:
+        label: Gallery
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '100'
+        imageHeight: '100'
+        type: fileupload
+    genres:
+        label: Genres
+        span: auto
+        nameFrom: genre_title
+        descriptionFrom: description
+        type: partial
+        path: field_genre
+    actors:
+        label: Actors
+        span: left
+        type: partial
+        path: field_actor
+

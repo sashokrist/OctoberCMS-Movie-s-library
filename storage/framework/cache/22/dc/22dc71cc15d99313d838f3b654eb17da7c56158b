@@ -1,0 +1,97 @@
+1552392048a:1:{s:16:"movie-single.htm";a:9:{s:8:"fileName";s:16:"movie-single.htm";s:7:"content";s:1108:"title = "Movie single"
+url = "/movies/movie/:slug"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+    use Sasho\Movies\Models\Movie;
+    function onStart(){
+        $this['movie'] = Movie::where('slug', '=', $this->param('slug'))->first();
+}
+
+?>
+
+==
+
+
+{% if movie %}
+    <h2>{{ movie.name}}</h2>
+    <img src="{{ movie.poster.thumb(200,auto) }}">
+
+
+
+    <h4>{{ movie.year }}</h4>
+
+    <h3>Description</h3>
+
+    {{ movie.description|raw }}
+
+    <h3>Actors</h3>
+
+    {% for actor in movie.actors %}
+        {{ actor.name }}
+        {{ actor.lastname }}
+    {% endfor %}
+    <h3>Gallery</h3>
+
+    <ul class="gallery clearfix">
+        {% for image in movie.movie_gallery %}
+            <li>
+                <a href="{{ image.path}}">
+                    <img src="{{ image.thumb(80,auto) }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Genres</h3>
+
+    {% for genre in movie.genres %}
+        <a href="./genres/{{ genre.slug }}">{{ genre.genre_title }}</a><br>
+    {% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}";s:5:"mtime";i:1552314376;s:6:"markup";s:846:"{% if movie %}
+    <h2>{{ movie.name}}</h2>
+    <img src="{{ movie.poster.thumb(200,auto) }}">
+
+
+
+    <h4>{{ movie.year }}</h4>
+
+    <h3>Description</h3>
+
+    {{ movie.description|raw }}
+
+    <h3>Actors</h3>
+
+    {% for actor in movie.actors %}
+        {{ actor.name }}
+        {{ actor.lastname }}
+    {% endfor %}
+    <h3>Gallery</h3>
+
+    <ul class="gallery clearfix">
+        {% for image in movie.movie_gallery %}
+            <li>
+                <a href="{{ image.path}}">
+                    <img src="{{ image.thumb(80,auto) }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Genres</h3>
+
+    {% for genre in movie.genres %}
+        <a href="./genres/{{ genre.slug }}">{{ genre.genre_title }}</a><br>
+    {% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}";s:4:"code";s:146:"    use Sasho\Movies\Models\Movie;
+    function onStart(){
+        $this['movie'] = Movie::where('slug', '=', $this->param('slug'))->first();
+}";s:5:"title";s:12:"Movie single";s:3:"url";s:19:"/movies/movie/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

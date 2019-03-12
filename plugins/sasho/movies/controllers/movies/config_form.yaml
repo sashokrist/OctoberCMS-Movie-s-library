@@ -1,0 +1,10 @@
+name: Movies
+form: $/sasho/movies/models/movie/fields.yaml
+modelClass: Sasho\Movies\Models\Movie
+defaultRedirect: sasho/movies/movies
+create:
+    redirect: 'sasho/movies/movies/update/:id'
+    redirectClose: sasho/movies/movies
+update:
+    redirect: sasho/movies/movies
+    redirectClose: sasho/movies/movies

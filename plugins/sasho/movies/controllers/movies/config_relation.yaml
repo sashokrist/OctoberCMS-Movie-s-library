@@ -1,0 +1,15 @@
+genres:
+  label: Genre
+  view:
+    list: $/sasho/movies/models/genre/columns.yaml
+    toolbarButtons: ADD|REMOVE
+  manage:
+    form: $/sasho/movies/models/genre/fields.yaml
+    showCheckboxes: true
+actors:
+  label: actors
+  view:
+    list: $/sasho/movies/models/actor/columns.yaml
+    showSearch: true
+  manage:
+    form: $/sasho/movies/models/actor/fields.yaml

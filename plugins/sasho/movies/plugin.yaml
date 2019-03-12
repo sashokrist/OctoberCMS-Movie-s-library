@@ -1,0 +1,26 @@
+plugin:
+    name: 'sasho.movies::lang.plugin.name'
+    description: 'sasho.movies::lang.plugin.description'
+    author: sasho
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Movies
+        url: sasho/movies/movies
+        icon: icon-video-camera
+        permissions:
+            - manage_movies
+        sideMenu:
+            side-menu-item:
+                label: Genres
+                url: sasho/movies/genres
+                icon: icon-tag
+            side-menu-item2:
+                label: Actors
+                url: sasho/movies/actor
+                icon: icon-user
+permissions:
+    manage_movies:
+        tab: 'sasho.movies::lang.plugin.name'
+        label: 'Manage movies'

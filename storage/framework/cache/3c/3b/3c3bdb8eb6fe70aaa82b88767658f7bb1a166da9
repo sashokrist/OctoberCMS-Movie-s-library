@@ -1,0 +1,14 @@
+1552392048a:1:{s:16:"contact-form.htm";a:11:{s:8:"fileName";s:16:"contact-form.htm";s:7:"content";s:205:"title = "Contact form"
+url = "/contact-form"
+layout = "default"
+is_hidden = 0
+
+[contactform]
+
+[siteSearchInclude]
+==
+<h2>Contact Form</h2>
+This is our contact form.
+{% component 'contactform' %}";s:5:"mtime";i:1552311625;s:6:"markup";s:79:"<h2>Contact Form</h2>
+This is our contact form.
+{% component 'contactform' %}";s:4:"code";N;s:5:"title";s:12:"Contact form";s:3:"url";s:13:"/contact-form";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"contactform";a:0:{}s:17:"siteSearchInclude";a:0:{}}}

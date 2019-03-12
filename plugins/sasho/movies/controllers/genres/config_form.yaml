@@ -1,0 +1,10 @@
+name: Genres
+form: $/sasho/movies/models/genre/fields.yaml
+modelClass: Sasho\Movies\Models\Genre
+defaultRedirect: sasho/movies/genres
+create:
+    redirect: 'sasho/movies/genres/update/:id'
+    redirectClose: sasho/movies/genres
+update:
+    redirect: sasho/movies/genres
+    redirectClose: sasho/movies/genres

@@ -1,0 +1,74 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[actors]
+results = 0
+sortOrder = "name asc"
+
+[siteSearchInclude]
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "serach.htm"
+==
+<?
+    use Sasho\Movies\Models\Movie;
+    function onStart(){
+        $this['movies'] = Movie::take(4)->get();
+
+}
+
+?>
+
+==
+<div class="jumbotron">
+    <div class="container">
+        {% content "welcome.htm" %}
+    </div>
+</div>
+{% component 'searchInput' %}
+<ul class="movie-list">
+    {% for movie in movies %}
+        <li>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            <h3>
+                <a href="./movies/movie/{{movie.slug}}">
+                    {{ movie.name }} - {{movie.year}}
+                </a>
+            </h3>
+
+            {{ html_limit(movie.description, 150)|raw }}
+        </li>
+    {% else %}
+        <li class="no-data">No Movies found</li>
+    {% endfor %}
+</ul>
+
+<div class="container text-center">
+    <h2>Let's start here</h2> </div>
+<div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus aspernatur culpa dolor expedita ipsa
+        laborum minima molestias neque nesciunt numquam obcaecati tempore temporibus vitae voluptatibus! Harum natus non
+        totam.
+    </div>
+    <div>Animi, eveniet, numquam. Minus odit perspiciatis placeat quaerat reprehenderit tempore ullam vel vero? A,
+        assumenda blanditiis commodi culpa, dolores ea eos inventore, ipsam laudantium minus nulla odit perspiciatis
+        veritatis voluptatibus.
+    </div>
+    <div>Exercitationem fugiat illum iure sapiente tempora? Adipisci dicta eius explicabo facere illum incidunt maxime
+        nostrum officiis quasi sed! A ab amet dolorem dolores doloribus eaque expedita, molestiae officia perspiciatis
+        voluptatem.
+    </div>
+    <div>Accusantium cupiditate, dicta eligendi fugit nesciunt nobis non officiis, quia quo ratione, repellat ullam
+        voluptatibus? Amet, autem cum exercitationem incidunt ipsam, libero molestiae quam quas, quia rerum sed
+        similique sint?
+    </div>
+    <div>Accusantium adipisci architecto at consectetur enim ipsam odit quis! Alias amet cumque deleniti dolorem
+        doloremque, facilis iusto, minus necessitatibus perspiciatis placeat possimus praesentium, reprehenderit sequi
+        voluptatem voluptatibus! Eos laboriosam, natus.
+    </div>
+</div>{% component 'actors' %}

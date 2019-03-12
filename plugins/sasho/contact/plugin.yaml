@@ -1,0 +1,6 @@
+plugin:
+    name: 'sasho.contact::lang.plugin.name'
+    description: 'sasho.contact::lang.plugin.description'
+    author: sasho
+    icon: oc-icon-adjust
+    homepage: ''

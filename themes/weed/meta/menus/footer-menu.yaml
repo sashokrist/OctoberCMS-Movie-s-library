@@ -1,0 +1,56 @@
+name: 'Footer menu'
+items:
+    -
+        title: Home
+        type: url
+        url: /
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Movies
+        type: cms-page
+        code: ''
+        reference: movies
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact form'
+        type: cms-page
+        code: ''
+        reference: contact-form
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Login
+        type: cms-page
+        code: ''
+        reference: login
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Add actors'
+        type: cms-page
+        code: ''
+        reference: add-actors
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        type: cms-page
+        code: ''
+        reference: blog
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

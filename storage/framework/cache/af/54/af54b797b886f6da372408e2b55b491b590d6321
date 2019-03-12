@@ -1,0 +1,61 @@
+1552392098a:1:{s:10:"movies.htm";a:9:{s:8:"fileName";s:10:"movies.htm";s:7:"content";s:806:"title = "Movies"
+url = "/movies/:page?"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+    use Sasho\Movies\Models\Movie;
+    function onStart(){
+        $this['movies'] = Movie::orderBy('year', 'desc')->paginate(5);
+        $this['name'] = Input::get('name');
+}
+
+?>
+==
+
+<ul class="movie-list">
+    {% for movie in movies %}
+        <li>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            <h3>
+                <a href="./movies/movie/{{movie.slug}}">
+                    {{ movie.name }} - {{movie.year}}
+                </a>
+            </h3>
+
+            {{ html_limit(movie.description, 150)|raw }}
+        </li>
+    {% else %}
+        <li class="no-data">No Movies found</li>
+    {% endfor %}
+</ul>
+
+<div>
+    {{movies.render|raw}}
+</div>
+
+";s:5:"mtime";i:1552391494;s:6:"markup";s:522:"<ul class="movie-list">
+    {% for movie in movies %}
+        <li>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            <h3>
+                <a href="./movies/movie/{{movie.slug}}">
+                    {{ movie.name }} - {{movie.year}}
+                </a>
+            </h3>
+
+            {{ html_limit(movie.description, 150)|raw }}
+        </li>
+    {% else %}
+        <li class="no-data">No Movies found</li>
+    {% endfor %}
+</ul>
+
+<div>
+    {{movies.render|raw}}
+</div>";s:4:"code";s:179:"    use Sasho\Movies\Models\Movie;
+    function onStart(){
+        $this['movies'] = Movie::orderBy('year', 'desc')->paginate(5);
+        $this['name'] = Input::get('name');
+}";s:5:"title";s:6:"Movies";s:3:"url";s:14:"/movies/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

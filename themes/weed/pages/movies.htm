@@ -1,0 +1,37 @@
+title = "Movies"
+url = "/movies/:page?"
+layout = "default"
+is_hidden = 0
+
+==
+<?
+    use Sasho\Movies\Models\Movie;
+    function onStart(){
+        $this['movies'] = Movie::orderBy('year', 'desc')->paginate(5);
+        $this['name'] = Input::get('name');
+}
+
+?>
+==
+
+<ul class="movie-list">
+    {% for movie in movies %}
+        <li>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            <h3>
+                <a href="./movies/movie/{{movie.slug}}">
+                    {{ movie.name }} - {{movie.year}}
+                </a>
+            </h3>
+
+            {{ html_limit(movie.description, 150)|raw }}
+        </li>
+    {% else %}
+        <li class="no-data">No Movies found</li>
+    {% endfor %}
+</ul>
+
+<div>
+    {{movies.render|raw}}
+</div>
+

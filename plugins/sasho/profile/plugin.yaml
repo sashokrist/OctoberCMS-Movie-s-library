@@ -1,0 +1,6 @@
+plugin:
+    name: 'sasho.profile::lang.plugin.name'
+    description: 'sasho.profile::lang.plugin.description'
+    author: sasho
+    icon: oc-icon-user-secret
+    homepage: ''
